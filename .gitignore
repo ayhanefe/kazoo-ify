@@ -1,0 +1,8 @@
+# Sound files
+*.mp3
+
+# Anything uploaded for testing
+/uploads/*
+
+# Dynamically generated model
+/pretrained_models/*
