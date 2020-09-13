@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kazooify</title>
+  </head>
+  <body>
+    <h1>KAZOOIFY</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+      <p><input type="file" name="file" accept=".mp3"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+    {% if songpath %}
+      <figure>
+        <figcaption>{{ songpath[songpath.index('/') + 1:] }}:</figcaption>
+        <audio controls src="{{ songpath }}">
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+      </figure>
+    {% else %}
+      <figure>
+        <figcaption>No song chosen yet, so enjoy this:</figcaption>
+        <audio controls src="">
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+      </figure>
+    {% endif %}
+  </body>
+</html> -->
+
+{% extends "bootstrap/base.html" %}
+{% block title %}Kazooify{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<style>
+input[type="radio"] {
+    vertical-align: baseline;
+}
+</style>
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-5">
+      <h1 class="centered">KAZOOIFY</h1>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-5">
+      <form method="POST">
+
+      </form>
+      <br />
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-5">
+      <form method="POST" action="" class = "centered" enctype="multipart/form-data">
+        <input type="radio" name="mode" value="I" checked> Instrumentals
+        <input type="radio" name="mode" value="V"> Vocals
+        <input type="radio" name="mode" value="K"> FUN FUN FUN
+        <p><input type="file" name="file" accept=".mp3"></p>
+        <p><input type="submit" value="Submit"></p>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-5">
+    {% if songpath %}
+      <figure>
+        <figcaption>{{ songpath[songpath.index('/') + 1:] }}:</figcaption>
+        <audio controls src="{{ songpath }}">
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+      </figure>
+    {% else %}
+      <figure>
+        <figcaption>No song chosen yet, so enjoy this:</figcaption>
+        <audio controls src="">
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+      </figure>
+    {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
